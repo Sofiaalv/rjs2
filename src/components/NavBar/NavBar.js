@@ -6,7 +6,7 @@ function NavBar () {
 
         <container className="fondo ">
         <div className='fila'>
-            <h2 style={{ color: "pink"}} href="#home">Alsodeco</h2>
+            <h2 style={{ color: "black"}} href="#home">Alsodeco</h2>
             <ul>
                 <button className="btn" href="#home">Home</button>
                 <button className="btn" href="#features">Catalogo</button>
