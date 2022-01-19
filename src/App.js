@@ -1,8 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CardProduct from './components/Cards/Cards';
-
+import 'bootstrap';
+import ItemListContainer from './components/Products/Products';
 
 
 function App() {
@@ -10,10 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <div className='fila'>
-      <CardProduct product="Tazon" price={1000}/>
-      <CardProduct product="Maceta" price={900}/>
-      <CardProduct product="Cuadro" price={1500}/>
-      <CardProduct product="Mesa Ratona" price={5000}/>
+      <ItemListContainer/>
       </div>
     </div>
   );

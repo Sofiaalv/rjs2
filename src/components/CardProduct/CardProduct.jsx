@@ -1,16 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Cards.css";
+import 'bootstrap';
+import "./CardProduct.css";
 
 
 
-function CardProduct(props){
+function CardProduct({product, price}){
 
-    console.log(props);
     return(
         <div className='fila'>
             <div className='CardProduct'>
-                <p>Producto: {props.product}</p>
-                <p>Precio: ${props.price} </p>
+                <p>Producto: {product}</p>
+                <p>Precio: ${price} </p>
                 <button className='btn'>Agregar a Carrito</button>
             </div>
         </div>
