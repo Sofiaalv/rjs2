@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap';
 import ItemListContainer from './components/Products/Products';
+import ItemCount from './components/ItemCounts/ItemCounts';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <NavBar />
       <div className='fila'>
       <ItemListContainer/>
+      <ItemCount/>
       </div>
     </div>
   );
