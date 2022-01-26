@@ -1,4 +1,4 @@
-import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Item.css";
 
 
@@ -8,9 +8,8 @@ const Item = ({ItemListContainer}) => {
         <div className='fila'>
             <div className='CardProduct'>
                 <p>Producto: {ItemListContainer.name} </p>
-                <p>Descripcion:{ItemListContainer.description}</p>
                 <p>Precio: $ {ItemListContainer.price} </p>
-                <button className='btn'>Agregar a Carrito</button>
+                <button className='btn'>Detalles del producto</button>
             </div>
         </div>
     )
