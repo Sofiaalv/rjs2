@@ -24,7 +24,7 @@ const ItemListContainer = [
     },
     {
         id:3,
-        img: "https://images.pexels.com/photos/7018406/pexels-photo-7018406.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        img: "",
         name:"Mesa Ratona",
         description: "Mesa Ratona ceramica",
         price: 1000
@@ -38,7 +38,6 @@ export function getItemListContainer () {
     return new Promise ((resolve,eject)=>{
         setTimeout(()=> resolve(ItemListContainer), 4000);
     });
-    
-};
+    };
 
 export default ItemListContainer;

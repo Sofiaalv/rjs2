@@ -1,18 +1,20 @@
 
 import "../ItemListContainer/ItemListContainer"
+import "../ItemDetail/ItemDetail.css"
 
-const ItemDetail = (ItemListContainer) =>  {
+const ItemDetail = ({UnProducto}) =>  {
 
-
-    <div className='fila'>
-    <div className='CardProduct'>
-        <p>{ItemListContainer.img}</p>
-        <p>Producto: {ItemListContainer.name} </p>
-        <p>Descripcion:{ItemListContainer.description}</p>
-        <p>Precio: $ {ItemListContainer.price} </p>
-        <button className='btn'>Detalles del producto</button>
-    </div>
-</div>
+    return  (
+        
+        <div className='CardProduct'>
+            <img className="ImgCard" src={UnProducto.img} alt="Imagen Taza"/>
+            <p>Producto: {UnProducto.name} </p>
+            <p>Descripcion:{UnProducto.description}</p>
+            <p>Precio: $ {UnProducto.price} </p>
+            <button className='btn'>Detalles del producto</button>
+        </div>
+    
+    )
 };
 
 export default ItemDetail
