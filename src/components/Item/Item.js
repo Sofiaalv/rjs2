@@ -3,15 +3,15 @@ import { Button, Card} from 'react-bootstrap';
 import "./Item.css";
 
 
-const Item = ({ItemListContainer}) => {
+const Item = ({producto}) => {
 
     return(
 
     <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={ItemListContainer.img} />
+        <Card.Img variant="top" src={producto.img} />
         <Card.Body>
-            <Card.Title>{ItemListContainer.name}</Card.Title>
-            <Card.Text>$ {ItemListContainer.price}</Card.Text>
+            <Card.Title>{producto.name}</Card.Title>
+            <Card.Text>$ {producto.price}</Card.Text>
             <Button variant="primary">Detalles del producto</Button>
         </Card.Body>
     </Card>

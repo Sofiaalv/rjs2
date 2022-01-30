@@ -24,8 +24,8 @@ const ItemListContainer = () => {
         return<p>Ha habido un error {error.message}</p>;
     } else return (
         <div>
-            {productos.map((productos) => {
-                return <Item key = {productos.id} productos={productos} />;
+            {productos.map((producto) => {
+                return <Item key = {producto.id} producto={producto} />;
             })}
         </div>
     )
