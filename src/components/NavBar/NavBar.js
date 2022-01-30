@@ -1,20 +1,20 @@
 import 'bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import CartWidget from '../icons/CartWidget';
 import "./NavBar.css"
 
 function NavBar () {
     return (
-
-        <container className="fondo ">
-        <div>
-            <h2 style={{ color: "black"}} href="#home">Alsodeco</h2>
-            <ul className='fila'>
-                <button className="btn" href="#home">Home</button>
-                <button className="btn" href="#features">Catalogo</button>
-                <CartWidget/>
-            </ul>
-        </div>
-        </container>  
+          <Navbar bg="dark" variant="dark">
+          <Container>
+          <Navbar.Brand href="#home">Alsodeco</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Catalogo</Nav.Link>
+            <CartWidget/>
+          </Nav>
+          </Container>
+        </Navbar>
     );
 }
 
