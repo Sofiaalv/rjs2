@@ -1,12 +1,12 @@
 
-import ItemDetail from "../components/ItemDetail/ItemDetail";
+import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailContainer";
 
 const ProductDetailPage = () => {
 
     return(
-        <div>
-            <h1 className="fila">Detalle de producto</h1>
-            <ItemDetail/>
+        <div className="centrado">
+            <h1>Detalle de producto</h1>
+            <ItemDetailContainer/>
         </div>
     )
 }

@@ -8,7 +8,7 @@ function NavBar () {
     return (
           <Navbar className='Navbar'>
           <Container>
-          <Navbar.Brand href="#home">ALSODECO</Navbar.Brand>
+          <Link to="/" className='link' >ALSODECO</Link>
           <Nav className="me-auto">
             <ul className='fila'>
               <li>

@@ -1,30 +1,34 @@
 
 import {useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Item from "../Item/Item";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 
 const ItemDetailContainer = ()=> {
     const {productId} = useParams ()
-    const [item, setItem] = useState()
+    const [product, setProduct] = useState()
 
     useEffect(()=>{
-        const URL = `http://localhost:3000/products/${productId}`;
+        const URL = `http://localhost:3001/productos/${productId}`;
         fetch (URL) 
             .then(res => res.json())
-            .then(data=> setItem(data));
+            .then(data=> setProduct(data));
     }, [productId]);
 
 
     return(
         <div>
-            <ItemDetail item={Item}/>
+            <ItemDetail product={product}/>
         </div>
     )
 
 };
+
+
+
+
+export default ItemDetailContainer;
 
 
 //export function getUnProducto () {
@@ -33,5 +37,3 @@ const ItemDetailContainer = ()=> {
   ////  });
     
 //};
-
-export default ItemDetailContainer;

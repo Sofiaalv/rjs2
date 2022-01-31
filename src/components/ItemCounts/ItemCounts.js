@@ -1,14 +1,14 @@
 import React from "react";
 import './ItemCount.css'
 
-function Stock (){
+function ItemCount (){
 
     const [count, setCount] = React.useState(0);
 
     const comprar = () => {
         setCount (count +1)
 
-        if (count > "5"){
+        if (count > "9"){
             alert("No hay mas stock"); 
         }
     }
@@ -19,8 +19,8 @@ function Stock (){
     return (
 
         <div>
-            <h1>Contador de Stock</h1>
-            <button onClick={comprar} className="btn">Agregar</button>
+            
+            <button onClick={comprar} className="btn">Agregar a carrrito</button>
             <span>{count}</span>
             <button onClick={borrar} className="btn">Borrar</button>
         </div>
@@ -31,4 +31,4 @@ function Stock (){
 
 }
 
-export default Stock;
+export default ItemCount;

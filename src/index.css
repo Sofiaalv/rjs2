@@ -14,17 +14,18 @@ code {
 
 .centrado {
   text-align: center;
-  padding: 2em;
+  padding: 15px;
 }
+
 .medidas{
-  
-  width: 70%;
+    width: 70%;
   height: auto;
   transition: 2s ;
   border-radius: 15em;
 }
 
-.centrado {
-  text-align: center;
-  padding: 2em;
+h1 {
+  padding: 20px;
 }
+
+

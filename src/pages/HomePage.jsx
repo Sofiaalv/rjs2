@@ -1,4 +1,11 @@
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+
 const HomePage = () => {
+
+  const navigate = useNavigate();
+
+
     return(
         <div className="centrado">
             <h1 >Bienvenidos a Alsodeco</h1>
@@ -29,10 +36,12 @@ const HomePage = () => {
   </button>
 </div>
 
-            <h2>No te pierdas nuestros productos!</h2>
+            <h1>No te pierdas nuestros productos!</h1>
+            <Button onClick={()=> navigate(`/products`)}>Entra aca!</Button>
         </div>
     )
 }
+
 
 
 export default HomePage;
