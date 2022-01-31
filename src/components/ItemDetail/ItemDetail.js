@@ -2,16 +2,16 @@
 import "../ItemListContainer/ItemListContainer"
 import "../ItemDetail/ItemDetail.css"
 
-const ItemDetail = ({UnProducto}) =>  {
+const ItemDetail = ({product}) =>  {
 
     return  (
         
         <div className='CardProduct'>
-            <img className="ImgCard" src={UnProducto.img} alt="Imagen Taza"/>
-            <p>Producto: {UnProducto.name} </p>
-            <p>Descripcion:{UnProducto.description}</p>
-            <p>Precio: $ {UnProducto.price} </p>
-            <button className='btn'>Detalles del producto</button>
+            <img className="ImgCard" src={product.img} alt={product.name}/>
+            <p>Producto: {product.name} </p>
+            <p>Descripcion:{product.description}</p>
+            <p>Precio: $ {product.price} </p>
+            <button className='btn'>Agregar a carrito</button>
         </div>
     
     )

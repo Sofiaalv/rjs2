@@ -1,24 +1,29 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCounts/ItemCounts';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import AboutUsPage from '../pages/AboutUsPage';
-import ProductsPage from '../pages/ProductsPage';
+import HomePage from './pages/HomePage';
+import AboutUsPage from './pages/AboutUsPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+
 
 
 function App() {
   return (
-    <div className="App">
-    <NavBar />
-    <ItemListContainer />
-    <ItemCount/>
-    <h1>Detalles Producto</h1>
-    <ItemDetailContainer/>
-  </div>
+    <BrowserRouter>
+    <NavBar/>
+    <Routes>
+      <Route path="/">
+        <Route index element={<HomePage/>}/>
+        <Route path="products">
+          <Route index  element={<ProductsPage/>}/>
+          <Route path= ":productId" element ={<ProductDetailPage/>}/>
+        </Route>
+        <Route path="about" element={<AboutUsPage/>}/>
+      </Route>
+    </Routes>
+  </BrowserRouter>
 );
 }
 

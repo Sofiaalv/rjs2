@@ -24,21 +24,13 @@ const ItemListContainer = () => {
         return<p>Ha habido un error {error.message}</p>;
     } else return (
         <div>
-            {productos.map((producto) => {
-                return <Item key = {producto.id} producto={producto} />;
+            {productos.map((product) => {
+                return <Item key = {product.id} product={product} />;
             })}
         </div>
     )
 
 }
 
-
-
-// export function getItemListContainer () {
-
-  //  return new Promise ((resolve,eject)=>{
-  //      setTimeout(()=> resolve(ItemListContainer), 4000);
-  //  });
-//};
 
 export default ItemListContainer;

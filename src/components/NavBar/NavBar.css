@@ -1,7 +1,42 @@
-.fondo{
-    background-color: rgb(174, 177, 177);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.Navbar {
+    background-color: rgb(226, 185, 155);
+    border-color: none;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 5px;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    
+}
+    
+li {
+    list-style: none;
+    margin-inline: 1rem;
+    font-size: 1.2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 20px;
+    color: white;
+    align-items: center;
+    padding: 0.625em;
+    
+}
+
+nav ul li a :hover {
+    text-decoration: none;
+    color: burlywood;
+}
+
+.logo {
+    padding-left: 15px;
+}

@@ -1,33 +1,37 @@
 
-import {useState } from "react";
+import {useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Item from "../Item/Item";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 
 
-const ItemDetailContainer = ({children, name})=> {
-    
-    const [UnProducto, setUnProducto] = useState([]);
-    
-    const producto ={
-        id:0,
-        img:"https://images.pexels.com/photos/4466209/pexels-photo-4466209.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        name:"Tazon",
-        description: "Tazon ceramica",
-        price: 1000
-    }
+const ItemDetailContainer = ()=> {
+    const {productId} = useParams ()
+    const [item, setItem] = useState()
 
-return  (
-    <ItemDetail UnProducto={producto}/>
-)
+    useEffect(()=>{
+        const URL = `http://localhost:3000/products/${productId}`;
+        fetch (URL) 
+            .then(res => res.json())
+            .then(data=> setItem(data));
+    }, [productId]);
+
+
+    return(
+        <div>
+            <ItemDetail item={Item}/>
+        </div>
+    )
+
 };
 
 
-export function getUnProducto () {
-    return new Promise ((resolve,eject)=>{
-    setTimeout(()=> resolve(ItemDetailContainer), 2000);
-    });
+//export function getUnProducto () {
+  //  return new Promise ((resolve,eject)=>{
+  //  setTimeout(()=> resolve(ItemDetailContainer), 2000);
+  ////  });
     
-};
-
+//};
 
 export default ItemDetailContainer;
