@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import CartPage from './pages/CartPage';
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path= ":productId" element ={<ProductDetailPage/>}/>
         </Route>
         <Route path="about" element={<AboutUsPage/>}/>
+        <Route path="cart" element={<CartPage/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

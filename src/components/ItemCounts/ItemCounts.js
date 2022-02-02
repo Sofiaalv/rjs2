@@ -1,11 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './ItemCount.css'
 
-function ItemCount (){
+function ItemCount (e){
 
     const [count, setCount] = React.useState(0);
+    const navigate = useNavigate();
 
-    const comprar = () => {
+    const agregar = () => {
         setCount (count +1)
 
         if (count > "9"){
@@ -20,9 +22,12 @@ function ItemCount (){
 
         <div>
             
-            <button onClick={comprar} className="btn">Agregar a carrrito</button>
+            <button onClick={agregar} className="btn">Agregar</button>
             <span>{count}</span>
             <button onClick={borrar} className="btn">Borrar</button>
+            <div>
+            <button onClick={()=> navigate(`/cart`)} className="btn">Ir al carrito</button>
+            </div>
         </div>
 
     )
