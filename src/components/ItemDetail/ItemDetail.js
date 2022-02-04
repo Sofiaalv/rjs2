@@ -2,8 +2,11 @@
 import "../ItemListContainer/ItemListContainer"
 import "../ItemDetail/ItemDetail.css"
 import ItemCount from "../ItemCounts/ItemCounts";
+import { CartContext } from "../context/CartContext";
 
 const ItemDetail = ({product}) =>  {
+
+    console.log (CartContext);
 
     return  (
         
@@ -12,7 +15,7 @@ const ItemDetail = ({product}) =>  {
             <p>Producto: {product?.name} </p>
             <p>Descripcion:{product?.description}</p>
             <p>Precio: $ {product?.price} </p>
-            <ItemCount />
+            <ItemCount  product ={product}/>
         </div>
     
     )

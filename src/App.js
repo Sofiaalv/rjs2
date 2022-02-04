@@ -7,26 +7,27 @@ import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
-
-
+import { CartContext } from './components/context/CartContext';
 
 
 function App() {
   return (
-    <BrowserRouter>
-    <NavBar/>
-    <Routes>
-      <Route path="/">
-        <Route index element={<HomePage/>}/>
-        <Route path="products">
-          <Route index  element={<ProductsPage/>}/>
-          <Route path= ":productId" element ={<ProductDetailPage/>}/>
+    <CartContext.Provider>
+      <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route path="/">
+          <Route index element={<HomePage/>}/>
+          <Route path="products">
+            <Route index  element={<ProductsPage/>}/>
+            <Route path= ":productId" element ={<ProductDetailPage/>}/>
+          </Route>
+          <Route path="about" element={<AboutUsPage/>}/>
+          <Route path="cart" element={<CartPage/>}/>
         </Route>
-        <Route path="about" element={<AboutUsPage/>}/>
-        <Route path="cart" element={<CartPage/>}/>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>  
+    </CartContext.Provider>
 );
 }
 
