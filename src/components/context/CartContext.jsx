@@ -7,13 +7,24 @@ export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
     
-    const addItem = (item, quantity) => {
-        const newItem = {item, quantity};
-        setCart((prevState) => [...prevState, newItem])
-    }
+    const addItem = (item, count) => {
+        const newItem = {item, count};
+        console.log("Se agrego al carrrito:", newItem);
+        setCart((prevState) => [...prevState, newItem]);
+    };
+
+    const removeItem = (id) => {
+        setCart((prev) => prev.filter((element) => element.item.id === id));
+    };
+
+    const clear = () => {
+        setCart ([]);
+    };
+
+    //const isInCart: (id) => true|false
 
     return(
-        <CartContext.Provider value={{cart, addItem}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clear}}>
             {children}
         </CartContext.Provider>
     );

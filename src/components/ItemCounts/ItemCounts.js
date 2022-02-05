@@ -1,12 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './ItemCount.css'
-import addItem from "../context/CartContext";
+import  { useCartContext } from "../context/CartContext";
 
 function ItemCount ({product}){
 
     const [count, setCount] = React.useState(0);
     const navigate = useNavigate();
+    const {addItem} = useCartContext();
     
     const sumar = () => {
         setCount (count +1)
@@ -18,16 +19,21 @@ function ItemCount ({product}){
         setCount (count -1)
     }
 
+    const handleClick =() => {
+        addItem(product, count)
+    };
+
 
     return (
         <div>
             
-            <button onClick={sumar} className="btn">+</button>
-            <span>{count}</span>
             <button onClick={restar} className="btn">-</button>
+            <span>{count}</span>
+            <button onClick={sumar} className="btn">+</button>
+            <p>Estas comprando {count} cantidades de producto.</p>
             <div>
             <button onClick={()=> navigate(`/cart`)} className="btn">Ir al carrito</button>
-            <button onClick={()=>{addItem(product, count)}} className="btn">Agregar al carrito</button>
+            <button onClick={handleClick} className="btn">Agregar al carrito</button>
             </div>
         </div>
     )
