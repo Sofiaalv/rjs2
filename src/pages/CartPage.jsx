@@ -15,10 +15,10 @@ const CartPage = () => {
                 <p> Producto: {product.item.name}</p>
                 <p> Producto: {product.item.count}</p>
                 <p> Price: {product.item.price}</p>
-                <button className="btn" onClick={()=>removeItem(product.item.id)}></button>
+                <button className="btn" onClick={()=>removeItem(product.item.id)}>Borrar Item</button>
             </div>
             ))}
-            <button className="btn" onClick={clear}></button>
+            <button className="btn" onClick={clear}>Borrar todo</button>
         </div>
     )
 }
