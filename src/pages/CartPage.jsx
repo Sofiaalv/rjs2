@@ -13,8 +13,7 @@ const CartPage = () => {
             {cart.map((product) => (
             <div key={product.item.id}>
                 <p> Producto: {product.item.name}</p>
-                <p> Producto: {product.item.count}</p>
-                <p> Price: {product.item.price}</p>
+                <p> $ {product.item.price}</p>
                 <button className="btn" onClick={()=>removeItem(product.item.id)}>Borrar Item</button>
             </div>
             ))}

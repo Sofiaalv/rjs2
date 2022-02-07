@@ -7,12 +7,12 @@ import AboutUsPage from './pages/AboutUsPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
-import { CartContext } from './components/context/CartContext';
+import { CartProvider } from './components/context/CartContext';
 
 
 function App() {
   return (
-    <CartContext.Provider>
+    <CartProvider>
       <BrowserRouter>
       <NavBar/>
       <Routes>
@@ -27,7 +27,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>  
-    </CartContext.Provider>
+    </CartProvider>
 );
 }
 
