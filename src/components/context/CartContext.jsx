@@ -9,8 +9,17 @@ export const CartProvider = ({children}) => {
     
     const addItem = (item, count) => {
         const newItem = {item, count};
-        console.log("Se agrego al carrrito:", newItem);
-        setCart((prevState) => [...prevState, newItem]);
+        const productIn = cart.find(
+            (product) => product.item.id === item.id
+            );
+            if (productIn) {          
+                const newCart = cart.filter(
+                    (product) => product.item.id !== item.id
+                );
+                productIn.count += count ;
+                setCart([...newCart, productIn]);
+    
+            } else setCart((prevState) => [...prevState, newItem]);
     };
 
     const removeItem = (id) => {
@@ -21,10 +30,14 @@ export const CartProvider = ({children}) => {
         setCart ([]);
     };
 
-    //const isInCart: (id) => true|false
+    const totalPrice = () => {
+        return cart.reduce((acc, prod) => acc + prod.item.price * prod.count, 0)
+    }
+    console.log(totalPrice())
+
 
     return(
-        <CartContext.Provider value={{cart, addItem, removeItem, clear}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clear, totalPrice}}>
             {children}
         </CartContext.Provider>
     );
@@ -33,15 +46,3 @@ export const CartProvider = ({children}) => {
 
 export const useCartContext = () => useContext(CartContext);
 
-//const [error, setError] = useState(null);
-///const [isLoading, setIsLoading] = useState(false);
-
-//useEffect (() => {
-    
-    //setIsLoading(true);
-   // fetch("http://localhost:3001/productos") 
-    //    .then((response) => response.json()) 
-    //    .then((json) => setCarrito())
-    //    .catch((err) => setError(err))
-    ///    .finally(()=> isLoading(false));
-//},[]);
