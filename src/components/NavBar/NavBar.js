@@ -1,12 +1,12 @@
 import 'bootstrap';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Helpers } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from '../icons/CartWidget';
 import "./NavBar.css"
 
 function NavBar () {
     return (
-          <Navbar className='Navbar'>
+          <Navbar className='Navbar StickyTop'>
           <Container>
           <Link to="/" className='link' >ALSODECO</Link>
           <Nav className="me-auto">
