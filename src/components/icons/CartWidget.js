@@ -7,13 +7,13 @@ import "./CartWidget.css"
 const CartWidget = () => {
 
     const navigate = useNavigate();
-    const { cart} = useCartContext();
+    // const [cart] = value.cartg
 
-    console.log(cart.length)
 
     return (
         <div>
-            <HiShoppingCart className="cartIcon" onClick={()=> navigate(`/cart`)}/>
+            <HiShoppingCart className="cartIcon" onClick={()=> navigate(`/cart`) } />
+            
         </div>
     )
 }
