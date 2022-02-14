@@ -9,7 +9,7 @@ const CartPage = () => {
     const { cart, removeItem, clear, totalPrice} = useCartContext();
     const navigate = useNavigate();
 
-    // cart.length === 0 ? <h2> No hay productos</h2> 
+    ///cart.length === 0 ? {} <h2> No hay productos</h2> 
     
     return(
         <div>

@@ -1,6 +1,7 @@
 import { createContext, useContext, useState} from "react";
 
 
+
 export const CartContext = createContext([]);
 
 export const CartProvider = ({children}) => {
@@ -19,7 +20,8 @@ export const CartProvider = ({children}) => {
                 productIn.count += count ;
                 setCart([...newCart, productIn]);
     
-            } else setCart((prevState) => [...prevState, newItem]);
+            } else setCart((prevState) => [...prevState, newItem],
+            )
     };
 
     const removeItem = (id) => {
@@ -30,10 +32,14 @@ export const CartProvider = ({children}) => {
         setCart ([]);
     };
 
-    const totalPrice = () => {
-        return cart.reduce((acc, prod) => acc + prod.item.price * prod.count, 0)
+
+    const totalPrice = () => { 
+        
+        return cart.reduce((acc, prod) => acc + prod.item.price * prod.count, 0);
     }
     console.log(totalPrice())
+
+
 
 
     return(

@@ -1,11 +1,13 @@
-{"productos" : [
+{      
+    "productos" : [
     {
         "id":0,
         "img": "https://images.pexels.com/photos/4466209/pexels-photo-4466209.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
         "name":"Tazon",
         "description": "Tazon ceramica",
         "price": 1000,
-        "stock": 10
+        "stock": 10,
+        "categoryId": 1
     },
     {
         "id":1,
@@ -13,7 +15,8 @@
         "name":"Maceta",
         "description": "Maceta ceramica",
         "price": 1000,
-        "stock": 10
+        "stock": 10,
+        "categoryId": 2
     },
     {
         "id":2,
@@ -21,7 +24,8 @@
         "name":"Cuadro",
         "description": "Cuadro madera",
         "price": 1000,
-        "stock": 10
+        "stock": 10,
+        "categoryId": 3
     },
     {
         "id":3,
@@ -29,6 +33,24 @@
         "name":"Mesa Ratona",
         "description": "Mesa Ratona ceramica",
         "price": 1000,
-        "stock": 10
+        "stock": 10,
+        "categoryId": 3
     }
-]}
+    ],
+
+    "categories": [
+        {
+            "id":1, 
+            "name": "Bazar"
+        },
+        {
+            "id":2, 
+            "name": "Jardin"
+        },
+        {
+            "id":3, 
+            "name": "Interor"
+        }
+
+    ]
+}
