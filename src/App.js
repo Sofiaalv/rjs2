@@ -22,6 +22,7 @@ function App() {
             <Route index  element={<ProductsPage/>}/>
             <Route path= ":productId" element ={<ProductDetailPage/>}/>
           </Route>
+          <Route path="category/:categoryId" element={<ProductsPage/>} />
           <Route path="about" element={<AboutUsPage/>}/>
           <Route path="cart" element={<CartPage/>}/>
         </Route>

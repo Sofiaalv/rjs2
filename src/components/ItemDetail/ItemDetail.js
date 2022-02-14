@@ -12,8 +12,8 @@ const ItemDetail = ({product}) =>  {
         <div className='CardProduct centrado'>
             <img className="ImgCard" src={product?.img} alt={product?.name}/>
             <p>Producto: {product?.name} </p>
-            <p>Descripcion:{product?.description}</p>
-            <p>Precio: $ {product?.price} </p>
+            <p>Descripcion: {product?.description}</p>
+            <p>Precio: ${product?.price} </p>
             <ItemCount product ={product}/>
         </div>
     

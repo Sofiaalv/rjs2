@@ -31,7 +31,7 @@ function ItemCount ({product}){
             <button onClick={restar} className="btn">-</button>
             <span>{count}</span>
             <button onClick={sumar} className="btn">+</button>
-            <p>Estas comprando {count} cantidades de producto.</p>
+            <p>Estas agregando {count} cantidades del producto.</p>
             <div>
             <button onClick={handleClick} className="btn">Agregar al carrito</button>
             <button onClick={()=> navigate(`/cart`)} className="btn">Ir al carrito</button>

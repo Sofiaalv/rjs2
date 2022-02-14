@@ -1,5 +1,5 @@
 import 'bootstrap';
-import { Container, Nav, Navbar, Helpers } from 'react-bootstrap';
+import { Container, Nav, Navbar, Helpers , DropdownButton,NavDropdown,DropdownToggle, Dropdown, DropdownItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartWidget from '../icons/CartWidget';
 import "./NavBar.css"
@@ -14,8 +14,13 @@ function NavBar () {
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
-                <Link to="/products">Productos</Link>
+              <li className='Dropdown'>
+                <Link to="/products" className="DropdownToggle" id="navbarDropdown" role="button"  data-bs-toggle="dropdown" aria-expanded="false">Productos</Link>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link to="/category/1" className="DropdownItem">Bazar</Link>
+                  <Link to="/category/2" className="DropdownItem">Jardin</Link>
+                  <Link to="/category/3" className="DropdownItem">Interior</Link>
+                </ul>
               </li>
               <li>
                 <Link to="/about">About</Link>
