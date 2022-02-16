@@ -8,6 +8,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import { CartProvider } from './components/context/CartContext';
+import ThanksPage from './pages/ThanksPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="category/:categoryId" element={<ProductsPage/>} />
           <Route path="about" element={<AboutUsPage/>}/>
           <Route path="cart" element={<CartPage/>}/>
+          <Route path="thanks/:orderId" element={<ThanksPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>  

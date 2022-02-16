@@ -1,1 +1,5 @@
-Proyecto React-JS para carrera de Coderhouse.
+Proyecto React-JS ecommerce para carrera de Coderhouse.
+
+que uso
+
+como levantar el priyecto levantar con react

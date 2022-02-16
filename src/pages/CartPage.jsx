@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import CartForm from '../components/CartForm/CartForm';
 import { useCartContext } from "../components/context/CartContext";
 
 
@@ -42,6 +43,7 @@ const CartPage = () => {
                 <button className="btn" onClick={clear}>Borrar todo</button>
                 <button className='btn' onClick={()=> navigate(`/products`)}>Seguir comprando</button>
             </div>
+            <CartForm/>
         </div>
     )
 }

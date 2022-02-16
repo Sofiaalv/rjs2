@@ -1,10 +1,13 @@
 import 'bootstrap';
 import { Container, Nav, Navbar, Helpers , DropdownButton,NavDropdown,DropdownToggle, Dropdown, DropdownItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/CartContext';
 import CartWidget from '../icons/CartWidget';
 import "./NavBar.css"
 
 function NavBar () {
+  const {cartQuantity} = useCartContext();
+
     return (
           <Navbar className='Navbar StickyTop'>
           <Container>
@@ -27,6 +30,7 @@ function NavBar () {
               </li>
               <li>
                 <CartWidget/>
+                <p>({cartQuantity})</p>
               </li>
             </ul>
           </Nav>
