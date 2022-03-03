@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase/firebase";
 import Item from "../Item/Item";
+import "./ItemListContainer.css"
 
-// const URL ="http://localhost:3001/productos"
+
 
 const ItemListContainer = () => {
     
     const [productos, setProductos] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-    const {categoryId} = useParams
+    const {categoryId} = useParams();
 
     useEffect(() => {
         const db = getFirestore();
@@ -46,9 +47,10 @@ const ItemListContainer = () => {
         return<p>Ha habido un error {error.message}</p>;
     } else return (
         <div>
-            <h1>Categoria: {categoryId}</h1>
+            {categoryId}
             {productos.map((product) => {
-                return <Item key = {product.id} product={product} />;
+                return <p className="Producto ">
+                    <Item key = {product.id} product={product}/>;</p>
             })}
         </div>
     )

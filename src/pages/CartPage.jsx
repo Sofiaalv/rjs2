@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import CartForm from '../components/CartForm/CartForm';
 import { useCartContext } from "../components/context/CartContext";
+import { Button } from "react-bootstrap";
 
 
 const CartPage = () => {
@@ -32,7 +33,7 @@ const CartPage = () => {
                             <td>{product.count}</td>
                             <td>$ {product.item.price * product.count}</td>
                             <td>
-                                <button className="btn" onClick={()=>removeItem(product.item.id)}>Borrar Items</button>
+                                <Button className="btn" onClick={()=>removeItem(product.item.id)}>Borrar Items</Button>
                             </td>
                         </tr>))}
                     </tbody>
@@ -40,8 +41,8 @@ const CartPage = () => {
             <div className='centrado'>
                 
                 <p>Total : ${totalPrice()}</p>
-                <button className="btn" onClick={clear}>Borrar todo</button>
-                <button className='btn' onClick={()=> navigate(`/products`)}>Seguir comprando</button>
+                <Button className="btn" onClick={clear}>Borrar todo</Button>
+                <Button className='btn' onClick={()=> navigate(`/products`)}>Seguir comprando</Button>
             </div>
             <CartForm/>
         </div>

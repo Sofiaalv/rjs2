@@ -1,5 +1,5 @@
 import 'bootstrap';
-import { Container, Nav, Navbar, Helpers , DropdownButton,NavDropdown,DropdownToggle, Dropdown, DropdownItem } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartContext';
 import CartWidget from '../icons/CartWidget';
@@ -9,27 +9,24 @@ function NavBar () {
   const {cartQuantity} = useCartContext();
 
     return (
-          <Navbar className='Navbar StickyTop'>
+      <Navbar className='Navbar StickyTop'>
+        <Link to="/" className='link' >ALSODECO</Link>
           <Container>
-          <Link to="/" className='link' >ALSODECO</Link>
           <Nav className="me-auto">
             <ul className='fila'>
               <li>
                 <Link to="/">Home</Link>
               </li>
-              <li className='Dropdown'>
-                <Link to="/products" className="DropdownToggle" id="navbarDropdown" role="button"  data-bs-toggle="dropdown" aria-expanded="false">Productos</Link>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link to="/category/1" className="DropdownItem">Bazar</Link>
-                  <Link to="/category/2" className="DropdownItem">Jardin</Link>
-                  <Link to="/category/3" className="DropdownItem">Interior</Link>
-                </ul>
+              <li>
+                <Link to="/products">Productos</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
               </li>
               <li>
                 <CartWidget/>
+              </li>
+              <li>
                 <p>({cartQuantity})</p>
               </li>
             </ul>

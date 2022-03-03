@@ -3,8 +3,8 @@ import ItemListContainer from "../components/ItemListContainer/ItemListContainer
 
 const ProductsPage = () => {
     return(
-        <div>
-            <h1 className="centrado">Productos</h1>
+        <div className="centrado">
+            <h1>Productos en stock</h1>
             <ItemListContainer/>
         </div>
     )

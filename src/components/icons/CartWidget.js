@@ -10,8 +10,6 @@ import "./CartWidget.css"
 const CartWidget = () => {
 
     const navigate = useNavigate();
- 
-
 
     return (
         <div>

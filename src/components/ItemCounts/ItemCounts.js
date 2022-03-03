@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import './ItemCount.css'
 import  { useCartContext } from "../context/CartContext";
+import { Button } from "react-bootstrap";
 
 function ItemCount ({product}){
 
@@ -17,6 +18,9 @@ function ItemCount ({product}){
     }
     const restar = () => {
         setCount (count -1)
+        if (count == "-1"){
+            alert("Error"); 
+        }
     }
 
     const handleClick =() => {
@@ -28,13 +32,13 @@ function ItemCount ({product}){
     return (
         <div>
             
-            <button onClick={restar} className="btn">-</button>
+            <Button onClick={restar} className="btn">-</Button>
             <span>{count}</span>
-            <button onClick={sumar} className="btn">+</button>
+            <Button onClick={sumar} className="btn">+</Button>
             <p>Estas agregando {count} cantidades del producto.</p>
             <div>
-            <button onClick={handleClick} className="btn">Agregar al carrito</button>
-            <button onClick={()=> navigate(`/cart`)} className="btn">Ir al carrito</button>
+            <Button onClick={handleClick} className="btn">Agregar al carrito</Button>
+            <Button onClick={()=> navigate(`/cart`)} className="btn">Ir al carrito</Button>
             </div>
         </div>
     )

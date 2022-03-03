@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useCartContext } from "../components/context/CartContext";
 import { getFirestore } from "../firebase/firebase";
+import { Button } from "react-bootstrap";
+
 
 const ThanksPage = () => {
-    const {orderId} = useParams()
-    const [order, setOrder] = useState ({})
+    const {orderId} = useParams();
+    const [order, setOrder] = useState ({});
+    const { cartQuantity, totalPrice, clear} = useCartContext();
+    const navigate = useNavigate();
 
     useEffect(()=>{
         const db = getFirestore();
@@ -17,12 +22,18 @@ const ThanksPage = () => {
     }, [orderId]);
     console.log (order)
 
+    if (!order.id) {
+        return <h2>Cargando....</h2>
+    }
+
     return (
         <div className="centrado">
             <h1>Gracias {order?.buyer?.name} por tu compra!</h1>
             <h2>Detalle:</h2>
-            <p>{order?.items[0]?.item?.name}</p>
-            
+            {order?.items.map((product) => {
+                return <h4> {cartQuantity}{product.item.name}{totalPrice}</h4>;
+            })}
+            <Button className='btn' onClick={()=> navigate(`/products`)} >Volver a productos</Button>
         </div>
     )
 }
