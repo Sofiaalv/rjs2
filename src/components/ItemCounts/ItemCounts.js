@@ -18,7 +18,7 @@ function ItemCount ({product}){
     }
     const restar = () => {
         setCount (count -1)
-        if (count == "-1"){
+        if (count < "1"){
             alert("Error"); 
         }
     }

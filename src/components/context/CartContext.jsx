@@ -14,7 +14,7 @@ export const CartProvider = ({children}) => {
         const getQuantity = () => {
             let quantity = 0;
             cart.forEach((product) => {
-                quantity += product.quantity;
+                quantity += product.count;
             });
             setCartQuantity(quantity);
         };
